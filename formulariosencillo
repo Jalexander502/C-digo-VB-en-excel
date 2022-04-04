@@ -1,0 +1,16 @@
+Private Sub CommandButton1_Click()
+Sheets("Hoja1").Select 'Esta línea de código me ayuda a detectar a que hoja ingresaré los datos.
+Range("A2").Select 'Esta línea de código mde ayuda a identificar con que celda se iniciará a agregar el dato
+ActiveCell = TextBox1.Text 'Esta línea de código activa el textbox con la celda a la cuál ingresará los datos
+ActiveCell.Offset(0, 1).Select 'Nos ayuda para dejar una línea de por medio
+
+Range("B2").Select
+ActiveCell = TextBox2.Text
+ActiveCell.Offset(0, 1).Select
+
+TextBox1.Text = ""
+TextBox2.Text = ""
+
+Selection.EntireRow.Insert 'Este código me ayuda a ingresar datos en filas.
+
+End Sub
